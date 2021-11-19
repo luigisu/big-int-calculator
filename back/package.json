@@ -1,0 +1,29 @@
+{
+  "name": "big-int-calculator",
+  "version": "1.0.0",
+  "description": "calculadora para multiplicar numeros enteros sin importar el tamaño",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "calculator",
+    "bitint",
+    "js",
+    "express"
+  ],
+  "author": "luis fontalvo <ljfontal98@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "14.17.0"
+  }
+}

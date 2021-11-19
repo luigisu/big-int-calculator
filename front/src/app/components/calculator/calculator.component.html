@@ -1,0 +1,76 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="card card-height">
+        <div class="card-header text-center">Calculator</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group text-center">
+              <label for="multiplicand">multiplicand</label>
+              <input
+                [(ngModel)]="multiplicand"
+                type="text"
+                class="form-control"
+                id="multiplicand"
+                name="multiplicand"
+              />
+            </div>
+            <div class="form-group text-center">
+              <label for="multiplier">multiplier</label>
+              <input
+                [(ngModel)]="multiplier"
+                type="text"
+                class="form-control"
+                id="multiplier"
+                name="multiplier"
+              />
+            </div>
+            <hr />
+            <div class="form-group text-center">
+              <button
+                type="submit"
+                class="btn btn-primary btn-sm text-center"
+                (click)="calculate(multiplicand, multiplier)"
+              >
+                calculate
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="card card-height">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-10">event history</div>
+            <div class="col-2">
+              <button
+                *ngIf="event_history.length > 0"
+                type="button"
+                class="btn btn-outline-dark btn-sm"
+                (click)="clear_event_history()"
+              >
+                clear
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="text-center" *ngIf="event_history.length == 0">...</p>
+          <table class="table table-hover">
+            <tbody>
+              <tr *ngFor="let item of event_history">
+                <th scope="row" class="text-center" (click)="re_calcule(item)">
+                  {{ item.multiplicand }} * {{ item.multiplier }} =
+                  {{ item.result }}
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
